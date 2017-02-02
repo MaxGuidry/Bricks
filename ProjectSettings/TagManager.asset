@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Platform
   - Brick
+  - LRWall
+  - TBWall
   layers:
   - Default
   - TransparentFX

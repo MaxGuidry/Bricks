@@ -6,13 +6,13 @@ public class GameManager : MonoBehaviour
 
     public GameObject ball;
     public GameObject brick;
-    private GameObject[] bricks;
-    private Transform positionForBricks;
+    
+    private Vector3 positionForBricks;
 
     // Use this for initialization
     void Start()
     {
-        positionForBricks = brick.transform;
+        positionForBricks = brick.transform.position;
         MakeBricks();
     }
 
@@ -24,16 +24,20 @@ public class GameManager : MonoBehaviour
 
     void MakeBricks()
     {
-        positionForBricks.position = new Vector3(-8f, 2, 0);
-        for (int i = 0; i < 10; i++)
+        positionForBricks = new Vector3(-8f, 4, 0);
+        for (int i = 1; i < 28; i++)
         {
-            Transform newPosition = brick.transform;
 
-            newPosition.position += positionForBricks.position;
-            brick.transform.position = positionForBricks.position;
-            Instantiate(brick,positionForBricks.position,Quaternion.identity);
-          
-            positionForBricks.position += new Vector3(2f, 0f, 0f);
+            // brick.transform.position = positionForBricks.position;
+            Instantiate(brick, positionForBricks, Quaternion.identity);
+            if (i % 9 == 0)
+            {
+                positionForBricks += new Vector3(0f, -1.5f, 0);
+                positionForBricks.x = -8f;
+            }
+            else
+                positionForBricks += new Vector3(2f, 0f, 0f);
+
         }
     }
 
