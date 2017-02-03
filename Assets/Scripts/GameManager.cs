@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject ball;
     public GameObject brick;
-    
+    public Animation BrickExplosion;
     private Vector3 positionForBricks;
 
     // Use this for initialization

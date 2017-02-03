@@ -3,13 +3,15 @@ using System.Collections;
 
 public class BallMovement : MonoBehaviour
 {
+    
+    public float maxVelo;
     private Vector3 velocity;
     // Use this for initialization
     void Start()
     {
         velocity.z = 0;
-        velocity.y = .05f;
-        velocity.x = Random.Range(-.05f, .05f);
+        velocity.y = .07f;
+        velocity.x = Random.Range(-.07f, .05f);
     }
 
     // Update is called once per frame
@@ -22,12 +24,16 @@ public class BallMovement : MonoBehaviour
     {
         if (other.tag == "Platform")
         {
-            velocity = new Vector3((this.transform.position.x - other.transform.position.x) * Time.deltaTime, velocity.y, 0);
+            
+            velocity += new Vector3((this.transform.position.x - other.transform.position.x) * Time.deltaTime*4f, 0, 0);
+            if (velocity.magnitude > maxVelo)
+                velocity = (velocity.normalized) * maxVelo;
             velocity.y *= -1;
         }
         else if (other.tag == "Brick")
         {
             velocity.y *= -1;
+            
             Destroy(other.gameObject);
         }
         if (other.tag == "LRWall")
@@ -35,9 +41,6 @@ public class BallMovement : MonoBehaviour
         if (other.tag == "TBWall")
             velocity.y *= -1;
     }
-    void OnCollisionEnter(Collider other)
-    {
-        
-    }
+   
 
 }

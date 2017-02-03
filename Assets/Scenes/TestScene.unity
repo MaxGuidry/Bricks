@@ -505,11 +505,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013042443462, guid: 9644602f664159945b570472a925e129, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4000013042443462, guid: 9644602f664159945b570472a925e129, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.795
+      value: -3.9
       objectReference: {fileID: 0}
     - target: {fileID: 4000013042443462, guid: 9644602f664159945b570472a925e129, type: 2}
       propertyPath: m_LocalPosition.z
@@ -540,6 +540,23 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23000013690036694, guid: 9644602f664159945b570472a925e129,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 69b395cd7ac8ca84f8f2034f9d89ba18, type: 2}
+    - target: {fileID: 4000013042443462, guid: 9644602f664159945b570472a925e129, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013042443462, guid: 9644602f664159945b570472a925e129, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013042443462, guid: 9644602f664159945b570472a925e129, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9644602f664159945b570472a925e129, type: 2}
   m_IsPrefabParent: 0
@@ -559,6 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e64fd2203a86b748be644463fe9b21e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxVelo: 4
 --- !u!1 &978060685
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +621,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6540794bc646b814090b7f4a3f85a6ef, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
